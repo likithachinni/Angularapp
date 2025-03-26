@@ -1,0 +1,44 @@
+<section id="tasks">
+  <header>
+    <h2>{{ name }}</h2>
+  </header>
+  <ul>
+    <menu>
+      <!-- <input type="text" [(ngModel)]="taskTitle" placeholder="taskTitle" />
+      <input type="text" [(ngModel)]="taskDate" placeholder="taskDate" />
+      <input type="text" [(ngModel)]="taskSummary" placeholder="taskSummary" /> -->
+      <button (click)="toogleinputfield()">Addtitle</button>
+      <div *ngIf="title">
+        <input type="text" placeholder="Enter something..." />
+      </div>
+    </menu>
+
+    <!-- <span>
+        <article>
+          <input type="text" [(ngModel)]="taskTitle" placeholder="taskTitle" />
+          <br />
+          <input type="text" [(ngModel)]="taskDate" placeholder="taskDate" />
+          <br />
+          <input
+            type="text"
+            [(ngModel)]="taskSummary"
+            placeholder="taskSummary"
+          />
+          <br />
+        </article>
+        <p>{{ taskTitle }}</p>
+      </span> -->
+
+    <!-- <h2>{{ dynamicVal }}</h2> -->
+    <!-- </menu>
+  </ul> -->
+
+    <ul>
+      @for(task of selectedUserTasks; track task.id){
+      <li>
+        <app-task [task]="task" />
+      </li>
+      }
+    </ul>
+  </ul>
+</section>
