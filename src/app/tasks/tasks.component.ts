@@ -23,8 +23,9 @@ export class TasksComponent {
   @Input({ required: true }) name!: string;
   @Input({ required: true }) userId!: string;
   title: boolean = false;
-  summary: string = '';
-  task: string = '';
+  summary: boolean = true;
+  visibility: boolean = false;
+
   tasks = [
     {
       id: 't1',
@@ -52,8 +53,17 @@ export class TasksComponent {
   get selectedUserTasks() {
     return this.tasks.filter((task) => task.userId === this.userId);
   }
+  data1 = 'good evening rose';
+  data2 = 'Love you bangaru \u{1F648}';
+  data3 = 'Thanks for bringing prawns';
 
   toogleinputfield() {
     this.title = !this.title;
+  }
+  toogleoutputfield() {
+    this.summary = !this.summary;
+  }
+  tooglevisibility() {
+    this.visibility = !this.visibility;
   }
 }

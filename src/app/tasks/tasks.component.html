@@ -8,9 +8,23 @@
       <input type="text" [(ngModel)]="taskDate" placeholder="taskDate" />
       <input type="text" [(ngModel)]="taskSummary" placeholder="taskSummary" /> -->
       <button (click)="toogleinputfield()">Addtitle</button>
+      <br />
       <div *ngIf="title">
-        <input type="text" placeholder="Enter something..." />
+        <input type="text" placeholder="{{ data1 }}" />
       </div>
+      <br />
+      <button (click)="toogleoutputfield()">Addsummary</button>
+      <div *ngIf="summary">
+        <input type="text" placeholder="{{ data3 }} " />
+      </div>
+      <br />
+      <button (click)="tooglevisibility()">Addoverview</button>
+      <div *ngIf="visibility">
+        <input type="text" placeholder="{{ data2 }}" />
+      </div>
+      <br />
+      <br />
+      <button type="submit">submit</button>
     </menu>
 
     <!-- <span>
